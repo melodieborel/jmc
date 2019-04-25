@@ -642,7 +642,7 @@ class MainWindowController: NSWindowController, NSSearchFieldDelegate, NSWindowD
                 aa_string += (" - " + (the_track.album! as Album).name!)
             }
         }
-        barViewToggle.isHidden = true
+        //barViewToggle.isHidden = true
         timer?.invalidate()
         theBox.contentView!.isHidden = false
         songNameLabel.stringValue = name_string
@@ -867,7 +867,7 @@ class MainWindowController: NSWindowController, NSSearchFieldDelegate, NSWindowD
     
     func makeDark() {
         self.window?.appearance = NSAppearance(named: NSAppearance.Name.vibrantDark)
-        theBox.fillColor = NSColor(patternImage: NSImage(named: "Inverted Gradient")!)
+        //theBox.fillColor = NSColor(patternImage: NSImage(named: "Inverted Gradient")!)
         let color = NSColor.white
         let attrs = [NSAttributedString.Key.foregroundColor : color]
         let newAttributedString = NSAttributedString(string: "Search", attributes: attrs)
@@ -901,11 +901,11 @@ class MainWindowController: NSWindowController, NSSearchFieldDelegate, NSWindowD
         progressBarView.mainWindowController = self
         //vintage playback view
         theBox.contentView?.isHidden = true
-        theBox.boxType = .custom
-        theBox.borderType = .bezelBorder
-        theBox.borderWidth = 1.1
-        theBox.cornerRadius = 3
-        theBox.fillColor = NSColor(patternImage: NSImage(named: "Gradient")!)
+        //theBox.boxType = .custom
+        //theBox.borderType = .bezelBorder
+        //theBox.borderWidth = 1.1
+        //theBox.cornerRadius = 3
+        //theBox.fillColor = NSColor(patternImage: NSImage(named: "Gradient")!)
         searchField.delegate = self
         //searchField.drawsBackground = false
         self.delegate?.audioModule.addObserver(self, forKeyPath: "track_changed", options: .new, context: &my_context)
@@ -941,7 +941,7 @@ class MainWindowController: NSWindowController, NSSearchFieldDelegate, NSWindowD
         if UserDefaults.standard.bool(forKey: jmcDarkAppearanceOption) {
             makeDark()
         }
-        barViewToggle.isHidden = true
+        //barViewToggle.isHidden = true
         //self.window?.invalidateShadow()
         self.durationShowsTimeRemaining = UserDefaults.standard.bool(forKey: DEFAULTS_DURATION_SHOWS_TIME_REMAINING)
         /*if #available(OSX 10.13, *) {
