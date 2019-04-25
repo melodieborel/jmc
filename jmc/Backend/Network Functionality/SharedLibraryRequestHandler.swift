@@ -27,12 +27,14 @@ class SharedLibraryRequestHandler {
             serializedResults.append(item.dictRepresentation())
         }
         return serializedResults
+        /**
         var finalObject: Data?
         do {
             finalObject = try JSONSerialization.data(withJSONObject: serializedResults, options: JSONSerialization.WritingOptions.prettyPrinted)
         } catch {
             print("error: \(error)")
         }
+        */
         //return finalObject
     }
     
@@ -55,11 +57,11 @@ class SharedLibraryRequestHandler {
             }
             return nil
         }()
-        print(result)
+        print(result!)
         guard result != nil else {return nil}
         let playlistSongsRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Track")
         let id_array = [Int]()
-        guard id_array != nil else {return nil}
+        //guard id_array != nil else {return nil}
         let playlistSongsPredicate = NSPredicate(format: "id in %@", id_array)
         playlistSongsRequest.predicate = playlistSongsPredicate
         let results: [Track]? = {
@@ -75,7 +77,7 @@ class SharedLibraryRequestHandler {
             }
             return nil
         }()
-        print(results)
+        print(results!)
         guard results != nil else {return nil}
         var serializedTracks = [NSDictionary]()
         for track in results! {

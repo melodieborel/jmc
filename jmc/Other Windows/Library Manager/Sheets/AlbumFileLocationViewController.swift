@@ -22,7 +22,7 @@ class AlbumFilePathNode: NSObject {
         self.parent = parent
         super.init()
         if let parent = parent {
-            if let index = parent.children.index(where: {$0.pathComponent.localizedStandardCompare(pathComponent) == ComparisonResult.orderedDescending}) {
+            if let index = parent.children.firstIndex(where: {$0.pathComponent.localizedStandardCompare(pathComponent) == ComparisonResult.orderedDescending}) {
                 parent.children.insert(self, at: index)
             } else {
                 parent.children.append(self)
@@ -77,7 +77,7 @@ class AlbumFilePathNode: NSObject {
             child.purge()
         }
         if self.totalFiles.count < 1 {
-            self.parent!.children.remove(at: self.parent!.children.index(of: self)!)
+            self.parent!.children.remove(at: self.parent!.children.firstIndex(of: self)!)
         }
     }
     
@@ -251,7 +251,7 @@ class AlbumFileLocationViewController: NSViewController, NSOutlineViewDataSource
             view.imageView?.image = values.customIcon ?? values.effectiveIcon as? NSImage
         } else {
             if node.children.count > 0 {
-                view.imageView?.image = NSImage(named: NSImage.Name.folder)
+                view.imageView?.image = NSImage(named: NSImage.folderName)
             } else {
                 view.imageView?.image = NSWorkspace.shared.icon(forFileType: UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, url.pathExtension as CFString, nil)!.takeRetainedValue() as String)
             }

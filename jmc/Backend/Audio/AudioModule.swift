@@ -271,7 +271,7 @@ enum completionHandlerType: Int {
         self.isFirstPlayback = true
         currentHandlerType = .destroy
         currentTrackLocation = track.location
-        print("paused value is \(is_paused)")
+        print("paused value is \(String(describing: is_paused))")
         initializePlayback()
         play()
         print(audioEngine)
@@ -287,7 +287,7 @@ enum completionHandlerType: Int {
     func playImmediately(_ trackLocation: String) {
         self.isFirstPlayback = true
         currentHandlerType = .destroy
-        print("paused value is \(is_paused)")
+        print("paused value is \(String(describing: is_paused))")
         currentTrackLocation = trackLocation
         initializePlayback()
         if (is_paused == false || is_paused == nil) {
@@ -302,7 +302,7 @@ enum completionHandlerType: Int {
     
     func playImmediatelyNoObservers(_ trackLocation: String) {
         currentHandlerType = .destroy
-        print("paused value is \(is_paused)")
+        print("paused value is \(String(describing: is_paused))")
         currentTrackLocation = trackLocation
         initializePlayback()
         if (is_paused == false || is_paused == nil) {
@@ -318,7 +318,7 @@ enum completionHandlerType: Int {
     
     func addTrackToQueue(_ track: Track, index: Int?) {
         print("adding track to audio queue")
-        print(index)
+        print(index!)
         print(trackQueue.count)
         if (currentTrackLocation == nil) {
             playImmediately(track.location!)
@@ -329,7 +329,7 @@ enum completionHandlerType: Int {
         else {
             if (index != nil && index < trackQueue.count) {
                 trackQueue.insert(track, at: index!)
-                print("inserted \(track.name) at \(index)")
+                print("inserted \(String(describing: track.name)) at \(String(describing: index))")
             }
             else {
                 trackQueue.append(track)
@@ -434,8 +434,8 @@ enum completionHandlerType: Int {
                         track_frame_offset = 0
                     } else {
                         print("total offset frames \(self.total_offset_frames)")
-                        print("duration frames \(self.duration_frames)")
-                        print("track frame offset \(self.track_frame_offset)")
+                        print("duration frames \(String(describing: self.duration_frames))")
+                        print("track frame offset \(String(describing: self.track_frame_offset))")
                         let new_frames = (self.duration_frames! - Int64(self.track_frame_offset!))
                         let new_seconds = Double(new_frames) / self.currentFileBufferer!.currentDecodeBuffer.format.sampleRate
                         self.total_offset_frames += new_frames
@@ -781,7 +781,7 @@ enum completionHandlerType: Int {
         if frame <= 0 {
             frame = 1
         }
-        print("seeking to frame \(frame) of \(duration_frames)")
+        print("seeking to frame \(frame) of \(String(describing: duration_frames))")
         track_frame_offset = Double(frame)
         currentHandlerType = .seek
         currentFileBufferer!.seek(to: frame)//can take place on multiple threads, do not set isSeeking to false yet
@@ -796,7 +796,7 @@ enum completionHandlerType: Int {
         if (curFile != nil) {
             self.duration_seconds = Double((curFile?.length)!) / (curFile?.processingFormat.sampleRate)!
             self.duration_frames = curFile?.length
-        } else if self.currentFileBufferer!.bufferA != nil {
+        } else {
             self.duration_frames = Int64(self.currentFileBufferer!.totalFrames)
             self.duration_seconds = Double(self.duration_frames!) / self.currentFileBufferer!.bufferA.format.sampleRate
         }

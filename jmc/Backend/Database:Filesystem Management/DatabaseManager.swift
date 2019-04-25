@@ -20,7 +20,7 @@ func instanceCheck(_ entity: String, name: String) -> NSManagedObject? {
     fetch_req.predicate = predicate
     var results: [NSManagedObject]?
     do {
-        results = try managedContext.fetch(fetch_req) as! [NSManagedObject]
+        results = try managedContext.fetch(fetch_req) as? [NSManagedObject]
     } catch {
         print("err: \(error)")
     }
@@ -128,7 +128,7 @@ class DatabaseManager: NSObject {
         }
     }
     
-    func undoOperationThatMovedFiles(for tracks: [Track]) {//handles errors
+    @objc func undoOperationThatMovedFiles(for tracks: [Track]) {//handles errors
         print("undoing a move operation")
         var errors = [Error]()
         for track in tracks {
@@ -404,8 +404,8 @@ class DatabaseManager: NSObject {
     }
     
     func getAlbumDirectory(for album: Album) -> URL {
-        let currentTrackLocations = album.tracks?.flatMap({return ($0 as! Track).location})
-        let currentTrackDirectories = currentTrackLocations?.flatMap({return URL(string: $0)?.deletingLastPathComponent()}) ?? [URL]()
+        let currentTrackLocations = album.tracks?.compactMap({return ($0 as! Track).location})
+        let currentTrackDirectories = currentTrackLocations?.compactMap({return URL(string: $0)?.deletingLastPathComponent()}) ?? [URL]()
         let directoriesSet = Set(currentTrackDirectories)
         if directoriesSet.count == 1 {
             return directoriesSet.first!
@@ -416,8 +416,8 @@ class DatabaseManager: NSObject {
     
     func trimDirectoryFollowingMoveOperation(track: Track, oldLocation: URL) { //does not handle errors good
         let oldDirectory = oldLocation.deletingLastPathComponent()
-        let currentTrackLocations = track.album?.tracks?.flatMap({return ($0 as! Track).location})
-        let currentTrackDirectories = currentTrackLocations?.flatMap({return URL(string: $0)?.deletingLastPathComponent()}) ?? [URL]()
+        let currentTrackLocations = track.album?.tracks?.compactMap({return ($0 as! Track).location})
+        let currentTrackDirectories = currentTrackLocations?.compactMap({return URL(string: $0)?.deletingLastPathComponent()}) ?? [URL]()
         let directoriesSet = Set(currentTrackDirectories)
         guard directoriesSet.contains(oldDirectory) == false else { return }
         //no files left in old directory
@@ -458,7 +458,7 @@ class DatabaseManager: NSObject {
     }
     
     func getMDItemFromURL(_ url: URL) -> MDItem? {
-        let item = MDItemCreateWithURL(kCFAllocatorDefault, url as CFURL!)
+        let item = MDItemCreateWithURL(kCFAllocatorDefault, url as CFURL?)
         return item
     }
     
@@ -633,10 +633,10 @@ class DatabaseManager: NSObject {
         guard let mediaFileObject = getMDItemFromURL(url) else {return nil}
         
         //format-agnostic metadata
-        metadataDictionary[kDateModifiedKey] = MDItemCopyAttribute(mediaFileObject, "kMDItemContentModificationDate" as CFString!) as? Date
-        metadataDictionary[kFileKindKey]     = MDItemCopyAttribute(mediaFileObject, "kMDItemKind" as CFString!) as? String
-        guard let size                       = MDItemCopyAttribute(mediaFileObject, "kMDItemFSSize" as CFString!) as? Int else {
-                print(MDItemCopyAttribute(mediaFileObject, "kMDItemFSSize" as CFString!))
+        metadataDictionary[kDateModifiedKey] = MDItemCopyAttribute(mediaFileObject, "kMDItemContentModificationDate" as CFString?) as? Date
+        metadataDictionary[kFileKindKey]     = MDItemCopyAttribute(mediaFileObject, "kMDItemKind" as CFString) as? String
+        guard let size                       = MDItemCopyAttribute(mediaFileObject, "kMDItemFSSize" as CFString) as? Int else {
+                print(MDItemCopyAttribute(mediaFileObject, "kMDItemFSSize" as CFString))
                 print("doingluskhrejwk")
                 return nil
         }
@@ -691,18 +691,18 @@ class DatabaseManager: NSObject {
             //what if we have a valid audio file, but can't retrieve audio metadata?
             //for now, abandon ship
             guard let sampleRate = MDItemCopyAttribute(mediaFileObject, "kMDItemAudioSampleRate" as CFString) as? Int as NSNumber?,
-                  let bitRate = MDItemCopyAttribute(mediaFileObject, "kMDItemAudioBitRate" as CFString!) as? Double, // / 1000
-                  let duration = MDItemCopyAttribute(mediaFileObject, "kMDItemDurationSeconds" as CFString!) as? Double // * 1000
+                  let bitRate = MDItemCopyAttribute(mediaFileObject, "kMDItemAudioBitRate" as CFString) as? Double, // / 1000
+                  let duration = MDItemCopyAttribute(mediaFileObject, "kMDItemDurationSeconds" as CFString) as? Double // * 1000
                   else { return nil }
             metadataDictionary[kSampleRateKey]  = sampleRate
             metadataDictionary[kBitRateKey]     = bitRate / 1000
             metadataDictionary[kTimeKey]        = duration * 1000
-            metadataDictionary[kTrackNumKey]    = (MDItemCopyAttribute(mediaFileObject, "kMDItemAudioTrackNumber" as CFString!) as? Int).map({ return String($0) })
-            metadataDictionary[kGenreKey]       = MDItemCopyAttribute(mediaFileObject, "kMDItemMusicalGenre" as CFString!) as? String
-            metadataDictionary[kNameKey]        = MDItemCopyAttribute(mediaFileObject, "kMDItemTitle" as CFString!) as? String
-            metadataDictionary[kAlbumKey]       = MDItemCopyAttribute(mediaFileObject, "kMDItemAlbum" as CFString!) as? String
-            metadataDictionary[kArtistKey]      = (MDItemCopyAttribute(mediaFileObject, "kMDItemAuthors" as CFString!) as? [String])?[0]
-            metadataDictionary[kComposerKey]    = MDItemCopyAttribute(mediaFileObject, "kMDItemComposer" as CFString!) as? String
+            metadataDictionary[kTrackNumKey]    = (MDItemCopyAttribute(mediaFileObject, "kMDItemAudioTrackNumber" as CFString) as? Int).map({ return String($0) })
+            metadataDictionary[kGenreKey]       = MDItemCopyAttribute(mediaFileObject, "kMDItemMusicalGenre" as CFString) as? String
+            metadataDictionary[kNameKey]        = MDItemCopyAttribute(mediaFileObject, "kMDItemTitle" as CFString) as? String
+            metadataDictionary[kAlbumKey]       = MDItemCopyAttribute(mediaFileObject, "kMDItemAlbum" as CFString) as? String
+            metadataDictionary[kArtistKey]      = (MDItemCopyAttribute(mediaFileObject, "kMDItemAuthors" as CFString) as? [String])?[0]
+            metadataDictionary[kComposerKey]    = MDItemCopyAttribute(mediaFileObject, "kMDItemComposer" as CFString) as? String
         }
         
         //other stuff?
@@ -1554,7 +1554,7 @@ class DatabaseManager: NSObject {
                     visualUpdateHandler!.initializeForSetCreation()
                 }
             }
-            locations = Set(tracks.flatMap({return $0.location?.lowercased()}))
+            locations = Set(tracks.compactMap({return $0.location?.lowercased()}))
         } catch {
             print(error)
             return [URL]()

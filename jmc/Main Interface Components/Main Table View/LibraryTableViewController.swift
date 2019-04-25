@@ -77,7 +77,7 @@ class LibraryTableViewController: NSViewController, NSMenuDelegate {
         guard tableView.clickedRow > -1 else { return }
         guard let track = ((self.trackViewArrayController.arrangedObjects as? NSArray)?[tableView.clickedRow] as? TrackView)?.track else { return }
         if track.is_available == false {
-            print("clicked unavailable \(track.name)")
+            print("clicked unavailable \(String(describing: track.name))")
             //self.mainWindowController?.delegate?.openLibraryManager(self)
             self.mainWindowController?.delegate?.preferencesWindowController?.libraryManagerViewController?.tabView.selectTabViewItem(at: 1)
             self.mainWindowController?.delegate?.preferencesWindowController?.libraryManagerViewController?.verifyLocationsPressed(self)
@@ -99,7 +99,7 @@ class LibraryTableViewController: NSViewController, NSMenuDelegate {
     }
     
     func reloadNowPlayingForTrack(_ track: Track) {
-        if let row = (trackViewArrayController.arrangedObjects as! [TrackView]).index(of: track.view!) {
+        if let row = (trackViewArrayController.arrangedObjects as! [TrackView]).firstIndex(of: track.view!) {
             self.currentTrackRow = row
             let tableRowIndexSet = IndexSet(integer: row)
             let indexOfPlaysColumn = self.tableView.column(withIdentifier: NSUserInterfaceItemIdentifier.init("play_count"))
@@ -113,7 +113,7 @@ class LibraryTableViewController: NSViewController, NSMenuDelegate {
         if let row = row {
             tableView.reloadData(forRowIndexes: IndexSet(integer: row), columnIndexes: IndexSet(0..<tableView.tableColumns.count))
         } else {
-            let row = (trackViewArrayController.arrangedObjects as! [TrackView]).index(of: track.view!)!
+            let row = (trackViewArrayController.arrangedObjects as! [TrackView]).firstIndex(of: track.view!)!
             tableView.reloadData(forRowIndexes: IndexSet(integer: row), columnIndexes: IndexSet(0..<tableView.tableColumns.count))
         }
     }
@@ -173,7 +173,7 @@ class LibraryTableViewController: NSViewController, NSMenuDelegate {
     
     func jumpToCurrentSong(_ track: Track?) {
         if track != nil {
-            let index = (trackViewArrayController.arrangedObjects as! [TrackView]).index(of: track!.view!)
+            let index = (trackViewArrayController.arrangedObjects as! [TrackView]).firstIndex(of: track!.view!)
             if index != nil {
                 tableView.scrollRowToVisible(index!)
             }
@@ -259,15 +259,15 @@ class LibraryTableViewController: NSViewController, NSMenuDelegate {
     }
     
     func modifyPlayOrderForSortDescriptors(_ poo: PlayOrderObject, trackID: Int) -> Int {
-        var idArray = (self.trackViewArrayController.arrangedObjects as! [TrackView]).map({return Int($0.track!.id!)})
+        let idArray = (self.trackViewArrayController.arrangedObjects as! [TrackView]).map({return Int(truncating: $0.track!.id!)})
         poo.currentPlayOrder = idArray
-        let queuedTrackIDs = Set(mainWindowController!.trackQueueViewController!.trackQueue.filter({$0.viewType == .futureTrack})).map({return Int($0.track!.id!)})
+        let queuedTrackIDs = Set(mainWindowController!.trackQueueViewController!.trackQueue.filter({$0.viewType == .futureTrack})).map({return Int(truncating: $0.track!.id!)})
         poo.currentPlayOrder = poo.currentPlayOrder!.filter({!queuedTrackIDs.contains($0)})
-        return idArray.index(of: trackID)!
+        return idArray.firstIndex(of: trackID)!
     }
 
     func getUpcomingIDsForPlayEvent(_ shuffleState: Int, id: Int, row: Int?) -> Int {
-        let volumes = Set((trackViewArrayController.arrangedObjects as! [TrackView]).flatMap({return $0.track?.volume}))
+        let volumes = Set((trackViewArrayController.arrangedObjects as! [TrackView]).compactMap({return $0.track?.volume}))
         var count = 0
         for volume in volumes {
             if !volumeIsAvailable(volume: volume) {
@@ -278,11 +278,11 @@ class LibraryTableViewController: NSViewController, NSMenuDelegate {
             print("library status has changed, reloading data")
             mainWindowController?.sourceListViewController?.reloadData()
         }
-        let idArray = (trackViewArrayController.arrangedObjects as! [TrackView]).map({return Int($0.track!.id!)})
+        let idArray = (trackViewArrayController.arrangedObjects as! [TrackView]).map({return Int(truncating: $0.track!.id!)})
         if shuffleState == NSControl.StateValue.on.rawValue {
             //secretly adjust the shuffled array such that it behaves mysteriously like a ring buffer. ssshhhh
             let currentShuffleArray = self.item!.playOrderObject!.shuffledPlayOrder!
-            let indexToSwap = currentShuffleArray.index(of: id)!
+            let indexToSwap = currentShuffleArray.firstIndex(of: id)!
             let beginningOfArray = currentShuffleArray[0..<indexToSwap]
             let endOfArray = currentShuffleArray[indexToSwap..<currentShuffleArray.count]
             let newArraySliceConcatenation = endOfArray + beginningOfArray
@@ -299,7 +299,7 @@ class LibraryTableViewController: NSViewController, NSMenuDelegate {
             if row != nil {
                 return row!
             } else {
-                return idArray.index(of: id)!
+                return idArray.firstIndex(of: id)!
             }
         }
     }
@@ -313,12 +313,12 @@ class LibraryTableViewController: NSViewController, NSMenuDelegate {
         } else {
             self.item?.playOrderObject?.currentPlayOrder = (trackViewArrayController?.arrangedObjects as! [TrackView]).map( {return $0.track!.id as! Int})
             if mainWindowController?.trackQueueViewController?.currentAudioSource == self.item {
-                if let index = self.item?.playOrderObject?.currentPlayOrder?.index(of: Int(mainWindowController!.currentTrack!.id!)) {
+                if let index = self.item?.playOrderObject?.currentPlayOrder?.firstIndex(of: Int(truncating: mainWindowController!.currentTrack!.id!)) {
                     mainWindowController?.trackQueueViewController?.currentSourceIndex = index
                 } else {
                     mainWindowController?.trackQueueViewController?.currentSourceIndex = -1
                 }
-                let queuedTrackIDs = Set(mainWindowController!.trackQueueViewController!.trackQueue.filter({$0.viewType == .futureTrack})).map({return Int($0.track!.id!)})
+                let queuedTrackIDs = Set(mainWindowController!.trackQueueViewController!.trackQueue.filter({$0.viewType == .futureTrack})).map({return Int(truncating: $0.track!.id!)})
                 self.item!.playOrderObject!.currentPlayOrder = self.item!.playOrderObject!.currentPlayOrder!.filter({!queuedTrackIDs.contains($0)})
             }
         }
@@ -330,65 +330,65 @@ class LibraryTableViewController: NSViewController, NSMenuDelegate {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TrackView")
         fetchRequest.predicate = smart_predicate
         do {
-            var results = try managedContext.fetch(fetchRequest) as? NSArray
-            if results != nil {
+            var results = try managedContext.fetch(fetchRequest) as NSArray
+            //if results != nil {
                 results = (results as! [TrackView]).map({return $0.track!}) as NSArray
                 if smart_criteria?.ordering_criterion != nil {
                     switch smart_criteria!.ordering_criterion! {
                     case "random":
                         results = shuffleArray(results as! [Track]) as NSArray
                     case "name":
-                        results = results!.sortedArray(using: #selector(Track.compareName)) as NSArray
+                        results = results.sortedArray(using: #selector(Track.compareName)) as NSArray
                     case "artist":
-                        results = results!.sortedArray(using: #selector(Track.compareArtist)) as NSArray
+                        results = results.sortedArray(using: #selector(Track.compareArtist)) as NSArray
                     case "album":
-                        results = results!.sortedArray(using: #selector(Track.compareAlbum)) as NSArray
+                        results = results.sortedArray(using: #selector(Track.compareAlbum)) as NSArray
                     case "composer":
                         let sortDescriptor = NSSortDescriptor(key: "composer.name", ascending: true)
-                        results = results?.sortedArray(using: [sortDescriptor]) as NSArray?
+                        results = results.sortedArray(using: [sortDescriptor]) as NSArray
                     case "genre":
-                        results = results!.sortedArray(using: #selector(Track.compareGenre)) as NSArray
+                        results = results.sortedArray(using: #selector(Track.compareGenre)) as NSArray
                     case "most recently added":
-                        results = results!.sortedArray(using: #selector(Track.compareDateAdded)) as NSArray
+                        results = results.sortedArray(using: #selector(Track.compareDateAdded)) as NSArray
                     case "least recently added":
-                        results = results!.sortedArray(using: #selector(Track.compareDateAdded)).reversed() as NSArray
+                        results = results.sortedArray(using: #selector(Track.compareDateAdded)).reversed() as NSArray
                     case "most played":
                         let sortDescriptor = NSSortDescriptor(key: "play_count", ascending: false)
-                        results = results?.sortedArray(using: [sortDescriptor]) as NSArray?
+                        results = results.sortedArray(using: [sortDescriptor]) as NSArray
                     case "least played":
                         let sortDescriptor = NSSortDescriptor(key: "play_count", ascending: true)
-                        results = results?.sortedArray(using: [sortDescriptor]) as NSArray?
+                        results = results.sortedArray(using: [sortDescriptor]) as NSArray
                     case "most skipped":
                         let sortDescriptor = NSSortDescriptor(key: "skip_count", ascending: false)
-                        results = results?.sortedArray(using: [sortDescriptor]) as NSArray?
+                        results = results.sortedArray(using: [sortDescriptor]) as NSArray
                     case "least skipped":
                         let sortDescriptor = NSSortDescriptor(key: "skip_count", ascending: true)
-                        results = results?.sortedArray(using: [sortDescriptor]) as NSArray?
+                        results = results.sortedArray(using: [sortDescriptor]) as NSArray
                     case "most recently played":
                         let sortDescriptor = NSSortDescriptor(key: "date_last_played", ascending: true)
-                        results = results?.sortedArray(using: [sortDescriptor]) as NSArray?
+                        results = results.sortedArray(using: [sortDescriptor]) as NSArray
                     case "least recently played":
                         let sortDescriptor = NSSortDescriptor(key: "date_last_played", ascending: false)
-                        results = results?.sortedArray(using: [sortDescriptor]) as NSArray?
+                        results = results.sortedArray(using: [sortDescriptor]) as NSArray
                     default:
                         print("fuck")
                     }
-                }
+                //}
                 var limit: Float = 0.0
                 var prunedResults = [Track]()
                 if smart_criteria?.fetch_limit != nil {
                     let fetchType = smart_criteria!.fetch_limit_type!
-                    let fetchLimit = Float(smart_criteria!.fetch_limit!)
-                    for thing in results! {
+                    let fetchLimit = Float(truncating: smart_criteria!.fetch_limit!)
+                    for thing in results {
                         switch fetchType {
                         case "hours":
-                            limit += (Float((thing as! Track).time!) / 1000)/60/60
+                            limit += (Float(truncating: (thing as! Track).time!) / 1000)/60/60
                         case "minutes":
-                            limit += (Float((thing as! Track).time!) / 1000)/60
+                            limit += (Float(truncating: (thing as! Track).time!) / 1000)/60
                         case "GB":
-                            limit += (Float((thing as! Track).size!)/1000000000)
+                            limit += (Float(truncating: (thing as! Track).size!)/1000000000)
                         case "MB":
-                            limit += (Float((thing as! Track).size!)/1000000)
+                            limit += (Float(truncating: (thing as! Track).size!)/1000000)
                         case "items":
                             limit += 1
                         default:
@@ -483,7 +483,7 @@ class LibraryTableViewController: NSViewController, NSMenuDelegate {
         }
         let playOrderObject = item.playOrderObject!
         print((self.trackViewArrayController.arrangedObjects as! NSArray).count)
-        let currentIDArray = (self.trackViewArrayController.arrangedObjects as! [TrackView]).map({return Int($0.track!.id!)})
+        let currentIDArray = (self.trackViewArrayController.arrangedObjects as! [TrackView]).map({return Int(truncating: $0.track!.id!)})
         var shuffledArray = currentIDArray
         shuffle_array(&shuffledArray)
         playOrderObject.shuffledPlayOrder = shuffledArray
@@ -495,7 +495,7 @@ class LibraryTableViewController: NSViewController, NSMenuDelegate {
         self.statusStringNeedsUpdate = true
     }
     @IBAction func getInfoAction(_ sender: Any) {
-        self.getInfoFromTableView(sender as! AnyObject)
+        self.getInfoFromTableView(sender as AnyObject)
         
     }
     @IBAction func deleteMenuItemAction(_ sender: Any) {
@@ -551,7 +551,7 @@ class LibraryTableViewController: NSViewController, NSMenuDelegate {
         self.trackViewArrayController.addObserver(self.mainWindowController!, forKeyPath: "arrangedObjects", options: .new, context: &self.mainWindowController!.my_context)
         self.trackViewArrayController.addObserver(self.mainWindowController!, forKeyPath: "filterPredicate", options: .new, context: &self.mainWindowController!.my_context)
         self.trackViewArrayController.addObserver(self.mainWindowController!, forKeyPath: "sortDescriptors", options: .new, context: &self.mainWindowController!.my_context)
-        trackViewArrayController.tableViewController = self as! LibraryTableViewControllerCellBased
+        trackViewArrayController.tableViewController = (self as! LibraryTableViewControllerCellBased)
         tableView.target = self
         tableView.menu?.delegate = self
         tableView.doubleAction = #selector(tableViewDoubleClick)

@@ -60,7 +60,7 @@ func informAppDelegateOfErrors(errors: [Error]) {
 }
 
 
-var globalRootLibrary: Library! = {() -> Library! in
+var globalRootLibrary: Library! = {() -> Library? in
     let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Library")
     let predicate = NSPredicate(format: "parent == nil")
     fetchReq.predicate = predicate
@@ -107,7 +107,7 @@ func getAllMiscellaneousAlbumFiles(for album: Album) -> [String] {
     if let otherFiles = album.other_files {
         albumFiles.append(contentsOf: otherFiles.map({return ($0 as! AlbumFile).location}))
     }
-    return albumFiles.flatMap({return $0})
+    return albumFiles.compactMap({return $0})
 }
 
 
@@ -188,7 +188,7 @@ func getCachedOrders(for context: NSManagedObjectContext) -> [String : CachedOrd
 }
 
 func validateStringForFilename(_ string: String) -> String {
-    let newString = String(string.characters.map({
+    let newString = String(string.map({
         $0 == "/" ? ":" : $0
     }))
     return newString
@@ -210,7 +210,7 @@ func determineTemplateLocations(context: NSManagedObjectContext, visualUpdateHan
     }
     var index = 0
     var newFileLocations = [NSObject : URL]()
-    let allAlbums = Set(library.tracks!.flatMap({return ($0 as? Track)?.album}))
+    let allAlbums = Set(library.tracks!.compactMap({return ($0 as? Track)?.album}))
     for album in allAlbums {
         newFileLocations.merge(templateBundle.match(wholeAlbum: album), uniquingKeysWith: {(first, second) -> URL in
             print("url conflict; this is bad");
@@ -306,7 +306,7 @@ func createNonTemplateDirectoryFor(album albumOptional: Album?, dry: Bool) -> UR
         if album.album_artist != nil {
             albumDirectory.appendPathComponent(album.album_artist!.name ?? UNKNOWN_ARTIST_STRING)
         } else {
-            let set = Set(album.tracks!.flatMap({return ($0 as! Track).artist?.name}))
+            let set = Set(album.tracks!.compactMap({return ($0 as! Track).artist?.name}))
             if set.count > 1 {
                 albumDirectory.appendPathComponent(UNKNOWN_ALBUM_ARTIST_STRING)
             } else {
@@ -604,7 +604,7 @@ func getSortName(_ name: String?) -> String? {
     if name != nil {
         for prefix in defaultSortPrefixDictionary.allKeys {
             if name!.lowercased().hasPrefix(prefix as! String) {
-                let range = name!.startIndex...name!.characters.index(name!.startIndex, offsetBy: (prefix as! String).characters.count - 1)
+                let range = name!.startIndex...name!.index(name!.startIndex, offsetBy: (prefix as! String).count - 1)
                 sortName!.removeSubrange(range)
                 return sortName
             }

@@ -74,7 +74,7 @@ class MissingTrackPathNode: NSObject {
             child.purge()
         }
         if self.missingTracks.count < 1 {
-            self.parent!.children.remove(at: self.parent!.children.index(of: self)!)
+            self.parent!.children.remove(at: self.parent!.children.firstIndex(of: self)!)
         }
     }
     
@@ -141,7 +141,7 @@ class MissingFilesViewController: NSViewController, NSOutlineViewDataSource, NSO
     
     init?(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, tracks: inout [Track]) {
         self.pathTree = MissingTrackPathTree(with: &tracks)
-        super.init(nibName: nibNameOrNil.map { NSNib.Name(rawValue: $0) }, bundle: nibBundleOrNil)
+        super.init(nibName: nibNameOrNil.map { $0 }, bundle: nibBundleOrNil)
         self.missingTracks = Set(tracks)
     }
     
@@ -185,7 +185,7 @@ class MissingFilesViewController: NSViewController, NSOutlineViewDataSource, NSO
                 view.textField?.textColor = NSColor.textColor
             } catch {
                 view.textField?.textColor = NSColor.disabledControlTextColor
-                view.imageView?.image = node.children.count > 0 ? NSImage(named: NSImage.Name(rawValue: "NSFolder")) : NSWorkspace.shared.icon(forFileType: UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, url.pathExtension as CFString, nil)!.takeRetainedValue() as String)
+                view.imageView?.image = node.children.count > 0 ? NSImage(named: "NSFolder") : NSWorkspace.shared.icon(forFileType: UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, url.pathExtension as CFString, nil)!.takeRetainedValue() as String)
                 //print(error)
             }
             return view
@@ -231,7 +231,7 @@ class MissingFilesViewController: NSViewController, NSOutlineViewDataSource, NSO
                 }
             }
             var nodesToRemove = node!.getEmptyNodesBeneath()
-            while let highestThing = nodesToRemove.popLast(), let rowOfThing = highestThing.parent!.children.index(of: highestThing) {
+            while let highestThing = nodesToRemove.popLast(), let rowOfThing = highestThing.parent!.children.firstIndex(of: highestThing) {
                 outlineView.removeItems(at: IndexSet(integer: rowOfThing), inParent: highestThing.parent, withAnimation: NSTableView.AnimationOptions.slideUp)
             }
             node!.purge()

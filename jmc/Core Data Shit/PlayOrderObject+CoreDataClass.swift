@@ -15,7 +15,7 @@ public class PlayOrderObject: NSManagedObject {
 
     func libraryStatusNeedsUpdate() {
         let viewController = self.sourceListItem?.tableViewController
-        let volumes = Set((viewController?.trackViewArrayController.arrangedObjects as! [TrackView]).flatMap({return $0.track!.volume}))
+        let volumes = Set((viewController?.trackViewArrayController.arrangedObjects as! [TrackView]).compactMap({return $0.track!.volume}))
         var count = 0
         var missingVolumes = [Volume]()
         for volume in volumes {
@@ -25,7 +25,7 @@ public class PlayOrderObject: NSManagedObject {
             }
         }
         for volume in missingVolumes {
-            let IDs = Set((volume.tracks as! Set<Track>).map({return Int($0.id!)}))
+            let IDs = Set((volume.tracks as! Set<Track>).map({return Int(truncating: $0.id!)}))
             self.currentPlayOrder = self.currentPlayOrder!.filter({return !IDs.contains($0)})
         }
         if count > 0 {

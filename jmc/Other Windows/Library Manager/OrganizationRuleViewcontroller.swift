@@ -58,7 +58,7 @@ class OrganizationRuleViewController: NSViewController, NSTokenFieldDelegate {
         }
     }
     
-    override func controlTextDidChange(_ obj: Notification) {
+    func controlTextDidChange(_ obj: Notification) {
         if tokenField.stringValue.contains("\\") {
             tokenField.stringValue = tokenField.stringValue.replacingOccurrences(of: "\\", with: "")
             tokenField.menu?.popUp(positioning: nil, at: tokenField.frame.origin.applying(CGAffineTransform(translationX: 0.0, y: -8.0)), in: self.view)
@@ -78,7 +78,7 @@ class OrganizationRuleViewController: NSViewController, NSTokenFieldDelegate {
         print("doingus")
         DispatchQueue.main.async {
             let parentWC = self.view.window?.windowController as? AdvancedOrganizationOptionsWindowController
-            let indexOfSelf = parentWC?.ruleControllers.index(of: self)
+            let indexOfSelf = parentWC?.ruleControllers.firstIndex(of: self)
             if parentWC != nil && indexOfSelf != nil {
                 parentWC!.tableView.noteHeightOfRows(withIndexesChanged: IndexSet(integer: indexOfSelf!))
             }
@@ -111,7 +111,7 @@ class OrganizationRuleViewController: NSViewController, NSTokenFieldDelegate {
         self.specialScrollView.translatesAutoresizingMaskIntoConstraints = false
         self.box.translatesAutoresizingMaskIntoConstraints = false
         //predicateEditor.addRow(nil)
-        let constraint = NSLayoutConstraint(item: specialScrollView, attribute: .height, relatedBy: .equal, toItem: predicateEditor, attribute: .height, multiplier: 1.0, constant: 0.0)
+        let constraint = NSLayoutConstraint(item: specialScrollView!, attribute: .height, relatedBy: .equal, toItem: predicateEditor, attribute: .height, multiplier: 1.0, constant: 0.0)
         NSLayoutConstraint.activate([constraint])
         self.view.wantsLayer = true
         for item in self.names {

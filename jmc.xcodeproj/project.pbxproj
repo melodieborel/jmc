@@ -118,8 +118,6 @@
 		0DA4E1851F27F8BE00EC80B2 /* example_cpp_decode_file in Resources */ = {isa = PBXBuildFile; fileRef = 0DA4E1691F27F8BE00EC80B2 /* example_cpp_decode_file */; };
 		0DA4E1861F27F8BE00EC80B2 /* example_cpp_encode_file in Resources */ = {isa = PBXBuildFile; fileRef = 0DA4E16A1F27F8BE00EC80B2 /* example_cpp_encode_file */; };
 		0DA4E1871F27F8BE00EC80B2 /* flac in Resources */ = {isa = PBXBuildFile; fileRef = 0DA4E16B1F27F8BE00EC80B2 /* flac */; };
-		0DA4E1881F27F8BE00EC80B2 /* Makefile.am in Resources */ = {isa = PBXBuildFile; fileRef = 0DA4E16C1F27F8BE00EC80B2 /* Makefile.am */; };
-		0DA4E1891F27F8BE00EC80B2 /* Makefile.in in Resources */ = {isa = PBXBuildFile; fileRef = 0DA4E16D1F27F8BE00EC80B2 /* Makefile.in */; };
 		0DA4E18A1F27F8BE00EC80B2 /* metaflac in Resources */ = {isa = PBXBuildFile; fileRef = 0DA4E16E1F27F8BE00EC80B2 /* metaflac */; };
 		0DA4E18B1F27F8BE00EC80B2 /* test_cuesheet in Resources */ = {isa = PBXBuildFile; fileRef = 0DA4E16F1F27F8BE00EC80B2 /* test_cuesheet */; };
 		0DA4E18C1F27F8BE00EC80B2 /* test_libFLAC in Resources */ = {isa = PBXBuildFile; fileRef = 0DA4E1701F27F8BE00EC80B2 /* test_libFLAC */; };
@@ -136,8 +134,6 @@
 		0DA4E1971F27F8BE00EC80B2 /* libreplaygain_synthesis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA4E17C1F27F8BE00EC80B2 /* libreplaygain_synthesis.a */; };
 		0DA4E1981F27F8BE00EC80B2 /* libtest_libs_common.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA4E17D1F27F8BE00EC80B2 /* libtest_libs_common.a */; };
 		0DA4E1991F27F8BE00EC80B2 /* libutf8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA4E17E1F27F8BE00EC80B2 /* libutf8.a */; };
-		0DA4E19A1F27F8BE00EC80B2 /* Makefile.am in Resources */ = {isa = PBXBuildFile; fileRef = 0DA4E17F1F27F8BE00EC80B2 /* Makefile.am */; };
-		0DA4E19B1F27F8BE00EC80B2 /* Makefile.in in Resources */ = {isa = PBXBuildFile; fileRef = 0DA4E1801F27F8BE00EC80B2 /* Makefile.in */; };
 		0DA4E19C1F27F8BE00EC80B2 /* Makefile.am in Resources */ = {isa = PBXBuildFile; fileRef = 0DA4E1811F27F8BE00EC80B2 /* Makefile.am */; };
 		0DA4E19D1F27F8BE00EC80B2 /* Makefile.in in Resources */ = {isa = PBXBuildFile; fileRef = 0DA4E1821F27F8BE00EC80B2 /* Makefile.in */; };
 		0DA7E95A1ECC141900719678 /* ImageCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA7E9581ECC141900719678 /* ImageCollectionViewItem.swift */; };
@@ -198,6 +194,8 @@
 		0DFE2E5A1EC0DAB6007EEF04 /* TrackQueueTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFE2E591EC0DAB6007EEF04 /* TrackQueueTableView.swift */; };
 		0DFE725C1F0190DC00EACE66 /* AlbumFilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFE725A1F0190DC00EACE66 /* AlbumFilesViewController.swift */; };
 		0DFE725D1F0190DC00EACE66 /* AlbumFilesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DFE725B1F0190DC00EACE66 /* AlbumFilesViewController.xib */; };
+		2C0F599F2271E258004CE3E2 /* LibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299B1D1DF151220009CF7A /* LibraryTableViewController.swift */; };
+		2C0F59A02271E259004CE3E2 /* LibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299B1D1DF151220009CF7A /* LibraryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -306,7 +304,7 @@
 		0D6E04191ED3C08C00AD9321 /* ArtistViewTrackListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArtistViewTrackListViewController.swift; path = "Artist View/ArtistViewTrackListViewController.swift"; sourceTree = "<group>"; };
 		0D6E041A1ED3C08C00AD9321 /* ArtistViewTrackListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ArtistViewTrackListViewController.xib; path = "Artist View/ArtistViewTrackListViewController.xib"; sourceTree = "<group>"; };
 		0D71113F1FE1CA0C006E460E /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = SOURCE_ROOT; };
-		0D7111471FE1DAD9006E460E /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "./Frameworks/Sparkle.framework"; sourceTree = "<group>"; };
+		0D7111471FE1DAD9006E460E /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = ./Frameworks/Sparkle.framework; sourceTree = "<group>"; };
 		0D76F6991D24622F00C6E70F /* TagEditorWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagEditorWindow.swift; sourceTree = "<group>"; };
 		0D76F69A1D24622F00C6E70F /* TagEditorWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagEditorWindow.xib; sourceTree = "<group>"; };
 		0D76F6A71D24B9AC00C6E70F /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -958,17 +956,22 @@
 				TargetAttributes = {
 					0DAB308C1CFBA3340028928F = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0900;
+						DevelopmentTeam = 8Z7WM5742Z;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					0DAB309E1CFBA3340028928F = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0900;
+						DevelopmentTeam = 8Z7WM5742Z;
+						LastSwiftMigration = 1020;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 0DAB308C1CFBA3340028928F;
 					};
 					0DAB30A91CFBA3340028928F = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0900;
+						DevelopmentTeam = 8Z7WM5742Z;
+						LastSwiftMigration = 1020;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 0DAB308C1CFBA3340028928F;
 					};
 				};
@@ -1021,14 +1024,11 @@
 				0DA4E1861F27F8BE00EC80B2 /* example_cpp_encode_file in Resources */,
 				0DAB30991CFBA3340028928F /* MainMenu.xib in Resources */,
 				0D8AFE591E6D136D004AC584 /* MediaScannerSheet.xib in Resources */,
-				0DA4E1881F27F8BE00EC80B2 /* Makefile.am in Resources */,
 				0D6E041C1ED3C08C00AD9321 /* ArtistViewTrackListViewController.xib in Resources */,
 				0D51C8A61EAC01F8002F6182 /* ConsolidateLibrarySheetController.xib in Resources */,
 				0DA4E1851F27F8BE00EC80B2 /* example_cpp_decode_file in Resources */,
 				0DA4E18E1F27F8BE00EC80B2 /* test_picture in Resources */,
 				0D9CE6781D3442D3004FA8CB /* Preferences.plist in Resources */,
-				0DA4E19A1F27F8BE00EC80B2 /* Makefile.am in Resources */,
-				0DA4E1891F27F8BE00EC80B2 /* Makefile.in in Resources */,
 				0DFE725D1F0190DC00EACE66 /* AlbumFilesViewController.xib in Resources */,
 				0DA4E18A1F27F8BE00EC80B2 /* metaflac in Resources */,
 				0DE486921EA83FBA009B226B /* GenericProgressBarSheetController.xib in Resources */,
@@ -1045,7 +1045,6 @@
 				0D76F69C1D24622F00C6E70F /* TagEditorWindow.xib in Resources */,
 				0DA4E18D1F27F8BE00EC80B2 /* test_libFLAC++ in Resources */,
 				0D299B181DF111490009CF7A /* AlbumArtViewController.xib in Resources */,
-				0DA4E19B1F27F8BE00EC80B2 /* Makefile.in in Resources */,
 				0DF188851EDD072B00241785 /* OrganizationRuleViewController.xib in Resources */,
 				0DA4E19D1F27F8BE00EC80B2 /* Makefile.in in Resources */,
 				0DA7E95B1ECC141900719678 /* ImageCollectionViewItem.xib in Resources */,
@@ -1204,6 +1203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0F599F2271E258004CE3E2 /* LibraryTableViewController.swift in Sources */,
 				0DAB30A41CFBA3340028928F /* jmcTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1212,6 +1212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0F59A02271E259004CE3E2 /* LibraryTableViewController.swift in Sources */,
 				0DAB30AF1CFBA3340028928F /* jmcUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1336,9 +1337,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8Z7WM5742Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -1361,8 +1363,9 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "jmc/jmc-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_REFLECTION_METADATA_LEVEL = none;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "${PROJECT_DIR}";
 			};
 			name = Debug;
@@ -1373,10 +1376,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8Z7WM5742Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -1399,8 +1403,9 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "jmc/jmc-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_REFLECTION_METADATA_LEVEL = none;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "${PROJECT_DIR}";
 			};
 			name = Release;
@@ -1409,13 +1414,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = minimalTunesTests/Info.plist;
+				DEVELOPMENT_TEAM = 8Z7WM5742Z;
+				INFOPLIST_FILE = jmcTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jcm.minimalTunesTests;
 				PRODUCT_NAME = jmc;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jmc.app/Contents/MacOS/jmc";
 			};
 			name = Debug;
@@ -1424,13 +1433,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = minimalTunesTests/Info.plist;
+				DEVELOPMENT_TEAM = 8Z7WM5742Z;
+				INFOPLIST_FILE = jmcTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jcm.minimalTunesTests;
 				PRODUCT_NAME = jmc;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jmc.app/Contents/MacOS/jmc";
 			};
 			name = Release;
@@ -1438,14 +1451,18 @@
 		0DAB30BA1CFBA3340028928F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = minimalTunesUITests/Info.plist;
+				DEVELOPMENT_TEAM = 8Z7WM5742Z;
+				INFOPLIST_FILE = jmcUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jcm.minimalTunesUITests;
 				PRODUCT_NAME = jmc;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = jmc;
 			};
 			name = Debug;
@@ -1453,14 +1470,18 @@
 		0DAB30BB1CFBA3340028928F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = minimalTunesUITests/Info.plist;
+				DEVELOPMENT_TEAM = 8Z7WM5742Z;
+				INFOPLIST_FILE = jmcUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jcm.minimalTunesUITests;
 				PRODUCT_NAME = jmc;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = jmc;
 			};
 			name = Release;

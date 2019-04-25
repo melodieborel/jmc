@@ -25,7 +25,7 @@ class ArtistViewTableCellView: NSTableCellView {
         Swift.print(self.tracksViewController!.trackArray.count)
         let currentConstraint = self.tracksView.constraints.filter({return $0.firstAttribute == .height})
         NSLayoutConstraint.deactivate(currentConstraint)
-        let constraint = NSLayoutConstraint(item: self.tracksView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: CGFloat(self.tracksViewController!.trackArray.count + 1) * self.tracksViewController!.tableView.rowHeight)
+        let constraint = NSLayoutConstraint(item: self.tracksView!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: CGFloat(self.tracksViewController!.trackArray.count + 1) * self.tracksViewController!.tableView.rowHeight)
         NSLayoutConstraint.activate([constraint])
         self.albumNameLabel.stringValue = self.album!.name!
         if self.album?.primary_art != nil {
