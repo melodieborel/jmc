@@ -366,15 +366,15 @@
 		0DA7E9591ECC141900719678 /* ImageCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewItem.xib; sourceTree = "<group>"; };
 		0DA8D03F1D1B1128009FEC28 /* ProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		0DAA85891EDFE90E004BF089 /* OrganizationFieldToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationFieldToken.swift; sourceTree = "<group>"; };
-		0DAB308D1CFBA3340028928F /* jmc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jmc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DAB308D1CFBA3340028928F /* mbTunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mbTunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAB30901CFBA3340028928F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		0DAB30951CFBA3340028928F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DAB30981CFBA3340028928F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0DAB309A1CFBA3340028928F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DAB309F1CFBA3340028928F /* jmc.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jmc.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DAB309F1CFBA3340028928F /* mbTunes.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mbTunes.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAB30A31CFBA3340028928F /* jmcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jmcTests.swift; sourceTree = "<group>"; };
 		0DAB30A51CFBA3340028928F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DAB30AA1CFBA3340028928F /* jmc.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jmc.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DAB30AA1CFBA3340028928F /* mbTunes.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mbTunes.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAB30AE1CFBA3340028928F /* jmcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jmcUITests.swift; sourceTree = "<group>"; };
 		0DAB30B01CFBA3340028928F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DB996C31ECE233000594939 /* AlbumArtWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumArtWindowController.swift; sourceTree = "<group>"; };
@@ -762,9 +762,9 @@
 		0DAB308E1CFBA3340028928F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0DAB308D1CFBA3340028928F /* jmc.app */,
-				0DAB309F1CFBA3340028928F /* jmc.xctest */,
-				0DAB30AA1CFBA3340028928F /* jmc.xctest */,
+				0DAB308D1CFBA3340028928F /* mbTunes.app */,
+				0DAB309F1CFBA3340028928F /* mbTunes.xctest */,
+				0DAB30AA1CFBA3340028928F /* mbTunes.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -890,9 +890,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0DAB308C1CFBA3340028928F /* jmc */ = {
+		0DAB308C1CFBA3340028928F /* mbTunes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0DAB30B31CFBA3340028928F /* Build configuration list for PBXNativeTarget "jmc" */;
+			buildConfigurationList = 0DAB30B31CFBA3340028928F /* Build configuration list for PBXNativeTarget "mbTunes" */;
 			buildPhases = (
 				0DCF1D1B1F1D112000240202 /* CopyFiles */,
 				0DAB30891CFBA3340028928F /* Sources */,
@@ -903,14 +903,14 @@
 			);
 			dependencies = (
 			);
-			name = jmc;
+			name = mbTunes;
 			productName = minimalTunes;
-			productReference = 0DAB308D1CFBA3340028928F /* jmc.app */;
+			productReference = 0DAB308D1CFBA3340028928F /* mbTunes.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0DAB309E1CFBA3340028928F /* jmcTests */ = {
+		0DAB309E1CFBA3340028928F /* mbTunesTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0DAB30B61CFBA3340028928F /* Build configuration list for PBXNativeTarget "jmcTests" */;
+			buildConfigurationList = 0DAB30B61CFBA3340028928F /* Build configuration list for PBXNativeTarget "mbTunesTests" */;
 			buildPhases = (
 				0DAB309B1CFBA3340028928F /* Sources */,
 				0DAB309C1CFBA3340028928F /* Frameworks */,
@@ -921,14 +921,14 @@
 			dependencies = (
 				0DAB30A11CFBA3340028928F /* PBXTargetDependency */,
 			);
-			name = jmcTests;
+			name = mbTunesTests;
 			productName = minimalTunesTests;
-			productReference = 0DAB309F1CFBA3340028928F /* jmc.xctest */;
+			productReference = 0DAB309F1CFBA3340028928F /* mbTunes.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0DAB30A91CFBA3340028928F /* jmcUITests */ = {
+		0DAB30A91CFBA3340028928F /* mbTunesUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0DAB30B91CFBA3340028928F /* Build configuration list for PBXNativeTarget "jmcUITests" */;
+			buildConfigurationList = 0DAB30B91CFBA3340028928F /* Build configuration list for PBXNativeTarget "mbTunesUITests" */;
 			buildPhases = (
 				0DAB30A61CFBA3340028928F /* Sources */,
 				0DAB30A71CFBA3340028928F /* Frameworks */,
@@ -939,9 +939,9 @@
 			dependencies = (
 				0DAB30AC1CFBA3340028928F /* PBXTargetDependency */,
 			);
-			name = jmcUITests;
+			name = mbTunesUITests;
 			productName = minimalTunesUITests;
-			productReference = 0DAB30AA1CFBA3340028928F /* jmc.xctest */;
+			productReference = 0DAB30AA1CFBA3340028928F /* mbTunes.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -976,7 +976,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0DAB30881CFBA3340028928F /* Build configuration list for PBXProject "jmc" */;
+			buildConfigurationList = 0DAB30881CFBA3340028928F /* Build configuration list for PBXProject "mbTunes" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -990,9 +990,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0DAB308C1CFBA3340028928F /* jmc */,
-				0DAB309E1CFBA3340028928F /* jmcTests */,
-				0DAB30A91CFBA3340028928F /* jmcUITests */,
+				0DAB308C1CFBA3340028928F /* mbTunes */,
+				0DAB309E1CFBA3340028928F /* mbTunesTests */,
+				0DAB30A91CFBA3340028928F /* mbTunesUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1222,12 +1222,12 @@
 /* Begin PBXTargetDependency section */
 		0DAB30A11CFBA3340028928F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0DAB308C1CFBA3340028928F /* jmc */;
+			target = 0DAB308C1CFBA3340028928F /* mbTunes */;
 			targetProxy = 0DAB30A01CFBA3340028928F /* PBXContainerItemProxy */;
 		};
 		0DAB30AC1CFBA3340028928F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0DAB308C1CFBA3340028928F /* jmc */;
+			target = 0DAB308C1CFBA3340028928F /* mbTunes */;
 			targetProxy = 0DAB30AB1CFBA3340028928F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1359,7 +1359,7 @@
 				MACH_O_TYPE = mh_execute;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jcm.jmc;
-				PRODUCT_NAME = jmc;
+				PRODUCT_NAME = mbTunes;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "jmc/jmc-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1399,7 +1399,7 @@
 				MACH_O_TYPE = mh_execute;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jcm.jmc;
-				PRODUCT_NAME = jmc;
+				PRODUCT_NAME = mbTunes;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "jmc/jmc-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1421,11 +1421,11 @@
 				INFOPLIST_FILE = jmcTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jcm.minimalTunesTests;
-				PRODUCT_NAME = jmc;
+				PRODUCT_NAME = mbTunes;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jmc.app/Contents/MacOS/jmc";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mbTunes.app/Contents/MacOS/mbTunes";
 			};
 			name = Debug;
 		};
@@ -1440,11 +1440,11 @@
 				INFOPLIST_FILE = jmcTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jcm.minimalTunesTests;
-				PRODUCT_NAME = jmc;
+				PRODUCT_NAME = mbTunes;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jmc.app/Contents/MacOS/jmc";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mbTunes.app/Contents/MacOS/mbTunes";
 			};
 			name = Release;
 		};
@@ -1458,7 +1458,7 @@
 				INFOPLIST_FILE = jmcUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jcm.minimalTunesUITests;
-				PRODUCT_NAME = jmc;
+				PRODUCT_NAME = mbTunes;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -1477,7 +1477,7 @@
 				INFOPLIST_FILE = jmcUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jcm.minimalTunesUITests;
-				PRODUCT_NAME = jmc;
+				PRODUCT_NAME = mbTunes;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -1489,7 +1489,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0DAB30881CFBA3340028928F /* Build configuration list for PBXProject "jmc" */ = {
+		0DAB30881CFBA3340028928F /* Build configuration list for PBXProject "mbTunes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DAB30B11CFBA3340028928F /* Debug */,
@@ -1498,7 +1498,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		0DAB30B31CFBA3340028928F /* Build configuration list for PBXNativeTarget "jmc" */ = {
+		0DAB30B31CFBA3340028928F /* Build configuration list for PBXNativeTarget "mbTunes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DAB30B41CFBA3340028928F /* Debug */,
@@ -1507,7 +1507,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		0DAB30B61CFBA3340028928F /* Build configuration list for PBXNativeTarget "jmcTests" */ = {
+		0DAB30B61CFBA3340028928F /* Build configuration list for PBXNativeTarget "mbTunesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DAB30B71CFBA3340028928F /* Debug */,
@@ -1516,7 +1516,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		0DAB30B91CFBA3340028928F /* Build configuration list for PBXNativeTarget "jmcUITests" */ = {
+		0DAB30B91CFBA3340028928F /* Build configuration list for PBXNativeTarget "mbTunesUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DAB30BA1CFBA3340028928F /* Debug */,

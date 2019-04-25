@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:../jmc">
+      location = "self:/Users/MB/Documents/GitHub/jmc/mbTunes.xcodeproj">
    </FileRef>
 </Workspace>
