@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ConsolidateLibrarySheetController" customModule="mbTunes" customModuleProvider="target">
+            <connections>
+                <outlet property="copyFilesRadioButton" destination="p3r-Lu-9Nn" id="i2W-OO-wtg"/>
+                <outlet property="moveFilesRadioButton" destination="rpR-j6-0wn" id="y9h-yy-7EE"/>
+                <outlet property="targetView" destination="MFd-Wj-PLF" id="epV-eS-E0E"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="837" height="430"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="837" height="430"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="p3r-Lu-9Nn">
+                        <rect key="frame" x="19" y="19" width="83" height="18"/>
+                        <buttonCell key="cell" type="radio" title="Copy files" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="x5h-co-iTE">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="radioActio:" target="-2" id="CXE-Bd-Cc5"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TJw-Cj-9eN">
+                        <rect key="frame" x="629" y="13" width="82" height="32"/>
+                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RNm-WS-CkA">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="cancelPressed:" target="-2" id="MIf-4w-tOl"/>
+                        </connections>
+                    </button>
+                    <splitView arrangesAllSubviews="NO" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MFd-Wj-PLF">
+                        <rect key="frame" x="20" y="56" width="797" height="354"/>
+                    </splitView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yfh-hR-vxh">
+                        <rect key="frame" x="711" y="13" width="112" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="JKn-wu-HA9"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="Consolidate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uP0-bO-FwQ">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="consolidatePressed:" target="-2" id="Mau-va-6BZ"/>
+                        </connections>
+                    </button>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="rpR-j6-0wn">
+                        <rect key="frame" x="115" y="19" width="84" height="18"/>
+                        <buttonCell key="cell" type="radio" title="Move files" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Khg-Id-0Ze">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="radioActio:" target="-2" id="y7d-mh-UiH"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MFd-Wj-PLF" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="4LZ-Gb-pVM"/>
+                    <constraint firstItem="MFd-Wj-PLF" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="9jB-Ve-xDQ"/>
+                    <constraint firstItem="rpR-j6-0wn" firstAttribute="top" secondItem="MFd-Wj-PLF" secondAttribute="bottom" constant="20" id="FCS-ou-NAF"/>
+                    <constraint firstItem="yfh-hR-vxh" firstAttribute="leading" secondItem="TJw-Cj-9eN" secondAttribute="trailing" constant="12" id="HhC-Ok-oTW"/>
+                    <constraint firstItem="rpR-j6-0wn" firstAttribute="leading" secondItem="p3r-Lu-9Nn" secondAttribute="trailing" constant="16" id="MCQ-XG-S1g"/>
+                    <constraint firstAttribute="bottom" secondItem="p3r-Lu-9Nn" secondAttribute="bottom" constant="20" id="Oe7-VH-ssl"/>
+                    <constraint firstAttribute="bottom" secondItem="rpR-j6-0wn" secondAttribute="bottom" constant="20" id="TXB-uJ-KVZ"/>
+                    <constraint firstAttribute="trailing" secondItem="yfh-hR-vxh" secondAttribute="trailing" constant="20" id="VSG-cL-CQj"/>
+                    <constraint firstAttribute="trailing" secondItem="MFd-Wj-PLF" secondAttribute="trailing" constant="20" id="YEo-Ro-OWA"/>
+                    <constraint firstAttribute="bottom" secondItem="yfh-hR-vxh" secondAttribute="bottom" constant="20" id="d00-v9-1Q0"/>
+                    <constraint firstItem="p3r-Lu-9Nn" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="ryL-s4-pds"/>
+                    <constraint firstAttribute="bottom" secondItem="TJw-Cj-9eN" secondAttribute="bottom" constant="20" id="uZj-Q1-eCx"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="317.5" y="242"/>
+        </window>
+    </objects>
+</document>

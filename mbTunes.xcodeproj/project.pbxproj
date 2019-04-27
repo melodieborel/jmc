@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,7 +45,7 @@
 		0D3878BA1DD12530004CC3C1 /* SampleRateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3878B91DD12530004CC3C1 /* SampleRateFormatter.swift */; };
 		0D3878BC1DD125E9004CC3C1 /* StupidNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3878BB1DD125E9004CC3C1 /* StupidNumberFormatter.swift */; };
 		0D388AAD1E1F2C8800D25A7D /* AddPlaylistButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D388AAC1E1F2C8800D25A7D /* AddPlaylistButton.swift */; };
-		0D3E00871E3F1DC4007C1C83 /* jmc.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E00851E3F1DC4007C1C83 /* jmc.xcdatamodeld */; };
+		0D3E00871E3F1DC4007C1C83 /* mbTunes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E00851E3F1DC4007C1C83 /* mbTunes.xcdatamodeld */; };
 		0D40A9F21D0D255A00F71C96 /* TransformerIntegerToTimestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D40A9F11D0D255A00F71C96 /* TransformerIntegerToTimestamp.swift */; };
 		0D447BB91EB2B73F00372A80 /* JMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D447BB81EB2B73F00372A80 /* JMTextField.swift */; };
 		0D48D0DF1F3D444B00ABAAC6 /* MediaKeyListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48D0DE1F3D444B00ABAAC6 /* MediaKeyListener.swift */; };
@@ -143,8 +143,8 @@
 		0DAB30911CFBA3340028928F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB30901CFBA3340028928F /* AppDelegate.swift */; };
 		0DAB30961CFBA3340028928F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DAB30951CFBA3340028928F /* Assets.xcassets */; };
 		0DAB30991CFBA3340028928F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DAB30971CFBA3340028928F /* MainMenu.xib */; };
-		0DAB30A41CFBA3340028928F /* jmcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB30A31CFBA3340028928F /* jmcTests.swift */; };
-		0DAB30AF1CFBA3340028928F /* jmcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB30AE1CFBA3340028928F /* jmcUITests.swift */; };
+		0DAB30A41CFBA3340028928F /* mbTunesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB30A31CFBA3340028928F /* mbTunesTests.swift */; };
+		0DAB30AF1CFBA3340028928F /* mbTunesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB30AE1CFBA3340028928F /* mbTunesUITests.swift */; };
 		0DB996C51ECE233000594939 /* AlbumArtWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB996C31ECE233000594939 /* AlbumArtWindowController.swift */; };
 		0DB996C61ECE233000594939 /* AlbumArtWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB996C41ECE233000594939 /* AlbumArtWindowController.xib */; };
 		0DB996D01ED2874F00594939 /* AlbumArtImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB996CF1ED2874F00594939 /* AlbumArtImageView.swift */; };
@@ -316,7 +316,7 @@
 		0D800C0A1ED3B54100EA2889 /* ArtistViewAlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArtistViewAlbumViewController.swift; path = "Artist View/ArtistViewAlbumViewController.swift"; sourceTree = "<group>"; };
 		0D800C0B1ED3B54100EA2889 /* ArtistViewAlbumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ArtistViewAlbumViewController.xib; path = "Artist View/ArtistViewAlbumViewController.xib"; sourceTree = "<group>"; };
 		0D800C0E1ED3B6BF00EA2889 /* ArtistViewTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArtistViewTableCellView.swift; path = "Artist View/ArtistViewTableCellView.swift"; sourceTree = "<group>"; };
-		0D87867C1E3EFC000091785B /* jmc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jmc-Bridging-Header.h"; sourceTree = "<group>"; };
+		0D87867C1E3EFC000091785B /* mbTunes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mbTunes-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D8A8B3E1F61CB54007529A0 /* AlbumFileLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumFileLocationViewController.swift; path = Sheets/AlbumFileLocationViewController.swift; sourceTree = "<group>"; };
 		0D8A8B3F1F61CB54007529A0 /* AlbumFileLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AlbumFileLocationViewController.xib; path = Sheets/AlbumFileLocationViewController.xib; sourceTree = "<group>"; };
 		0D8A8B421F61E524007529A0 /* DefaultsAndConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsAndConstants.swift; sourceTree = "<group>"; };
@@ -374,10 +374,10 @@
 		0DAB30981CFBA3340028928F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0DAB309A1CFBA3340028928F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DAB309F1CFBA3340028928F /* mbTunes.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mbTunes.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DAB30A31CFBA3340028928F /* jmcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jmcTests.swift; sourceTree = "<group>"; };
+		0DAB30A31CFBA3340028928F /* mbTunesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mbTunesTests.swift; sourceTree = "<group>"; };
 		0DAB30A51CFBA3340028928F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DAB30AA1CFBA3340028928F /* mbTunes.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mbTunes.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DAB30AE1CFBA3340028928F /* jmcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jmcUITests.swift; sourceTree = "<group>"; };
+		0DAB30AE1CFBA3340028928F /* mbTunesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mbTunesUITests.swift; sourceTree = "<group>"; };
 		0DAB30B01CFBA3340028928F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DB996C31ECE233000594939 /* AlbumArtWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumArtWindowController.swift; sourceTree = "<group>"; };
 		0DB996C41ECE233000594939 /* AlbumArtWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumArtWindowController.xib; sourceTree = "<group>"; };
@@ -522,12 +522,12 @@
 		0D01AD961D707DD800F9211F /* Miscellaneous */ = {
 			isa = PBXGroup;
 			children = (
-				0D87867C1E3EFC000091785B /* jmc-Bridging-Header.h */,
+				0D87867C1E3EFC000091785B /* mbTunes-Bridging-Header.h */,
 				0D71113F1FE1CA0C006E460E /* dsa_pub.pem */,
 				0D9CE6771D3442D3004FA8CB /* Preferences.plist */,
 				0DAB30951CFBA3340028928F /* Assets.xcassets */,
 				0DAB309A1CFBA3340028928F /* Info.plist */,
-				0D3E00851E3F1DC4007C1C83 /* jmc.xcdatamodeld */,
+				0D3E00851E3F1DC4007C1C83 /* mbTunes.xcdatamodeld */,
 			);
 			name = Miscellaneous;
 			sourceTree = "<group>";
@@ -706,7 +706,7 @@
 				0DA4E1821F27F8BE00EC80B2 /* Makefile.in */,
 			);
 			name = release;
-			path = jmc/release;
+			path = mbTunes/release;
 			sourceTree = "<group>";
 		};
 		0DA4E1661F27F8BE00EC80B2 /* bin */ = {
@@ -753,9 +753,9 @@
 			children = (
 				0D7111471FE1DAD9006E460E /* Sparkle.framework */,
 				0DF491EE1F27EC2600D23AD1 /* FLAC */,
-				0DAB308F1CFBA3340028928F /* jmc */,
-				0DAB30A21CFBA3340028928F /* jmcTests */,
-				0DAB30AD1CFBA3340028928F /* jmcUITests */,
+				0DAB308F1CFBA3340028928F /* mbTunes */,
+				0DAB30A21CFBA3340028928F /* mbTunesTests */,
+				0DAB30AD1CFBA3340028928F /* mbTunesUITests */,
 				0DAB308E1CFBA3340028928F /* Products */,
 				0D5682771FD9D40C0031C94B /* Frameworks */,
 			);
@@ -771,7 +771,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0DAB308F1CFBA3340028928F /* jmc */ = {
+		0DAB308F1CFBA3340028928F /* mbTunes */ = {
 			isa = PBXGroup;
 			children = (
 				0D01AD981D707ED900F9211F /* Core Data Shit */,
@@ -781,25 +781,25 @@
 				0D01AD951D707D2600F9211F /* Other Windows */,
 				0D01AD961D707DD800F9211F /* Miscellaneous */,
 			);
-			path = jmc;
+			path = mbTunes;
 			sourceTree = "<group>";
 		};
-		0DAB30A21CFBA3340028928F /* jmcTests */ = {
+		0DAB30A21CFBA3340028928F /* mbTunesTests */ = {
 			isa = PBXGroup;
 			children = (
-				0DAB30A31CFBA3340028928F /* jmcTests.swift */,
+				0DAB30A31CFBA3340028928F /* mbTunesTests.swift */,
 				0DAB30A51CFBA3340028928F /* Info.plist */,
 			);
-			path = jmcTests;
+			path = mbTunesTests;
 			sourceTree = "<group>";
 		};
-		0DAB30AD1CFBA3340028928F /* jmcUITests */ = {
+		0DAB30AD1CFBA3340028928F /* mbTunesUITests */ = {
 			isa = PBXGroup;
 			children = (
-				0DAB30AE1CFBA3340028928F /* jmcUITests.swift */,
+				0DAB30AE1CFBA3340028928F /* mbTunesUITests.swift */,
 				0DAB30B01CFBA3340028928F /* Info.plist */,
 			);
-			path = jmcUITests;
+			path = mbTunesUITests;
 			sourceTree = "<group>";
 		};
 		0DB996C71ECE607B00594939 /* Network Functionality */ = {
@@ -979,7 +979,7 @@
 				};
 			};
 			buildConfigurationList = 0DAB30881CFBA3340028928F /* Build configuration list for PBXProject "mbTunes" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1160,7 +1160,7 @@
 				0D606EF61E7B4C21007AE152 /* FileBufferer.swift in Sources */,
 				0DC7127C1E2F115A0054ECE6 /* ImportErrorWindowController.swift in Sources */,
 				0DB996D01ED2874F00594939 /* AlbumArtImageView.swift in Sources */,
-				0D3E00871E3F1DC4007C1C83 /* jmc.xcdatamodeld in Sources */,
+				0D3E00871E3F1DC4007C1C83 /* mbTunes.xcdatamodeld in Sources */,
 				0DE957C81EE9D5D0008CBECF /* Track+CoreDataProperties.swift in Sources */,
 				0D8A8B431F61E524007529A0 /* DefaultsAndConstants.swift in Sources */,
 				0DD7A3BC1EF4738F00FEDD71 /* StupidTableView.swift in Sources */,
@@ -1205,7 +1205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C0F599F2271E258004CE3E2 /* LibraryTableViewController.swift in Sources */,
-				0DAB30A41CFBA3340028928F /* jmcTests.swift in Sources */,
+				0DAB30A41CFBA3340028928F /* mbTunesTests.swift in Sources */,
 				2CFA3B822272654600275833 /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1215,7 +1215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C0F59A02271E259004CE3E2 /* LibraryTableViewController.swift in Sources */,
-				0DAB30AF1CFBA3340028928F /* jmcUITests.swift in Sources */,
+				0DAB30AF1CFBA3340028928F /* mbTunesUITests.swift in Sources */,
 				2CFA3B832272654700275833 /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1373,21 +1373,21 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
-				INFOPLIST_FILE = jmc/Info.plist;
+				INFOPLIST_FILE = mbTunes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/1.3.2/lib",
-					"$(PROJECT_DIR)/jmc/release/lib",
+					"$(PROJECT_DIR)/mbTunes/release/lib",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/FLAC",
 				);
 				MACH_O_TYPE = mh_execute;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jcm.jmc;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.melodieborel.mbTunes;
 				PRODUCT_NAME = mbTunes;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "jmc/jmc-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "mbTunes/mbTunes-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1413,22 +1413,23 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_OPTIMIZATION_LEVEL = s;
-				INFOPLIST_FILE = jmc/Info.plist;
+				INFOPLIST_FILE = mbTunes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/1.3.2/lib",
-					"$(PROJECT_DIR)/jmc/release/lib",
+					"$(PROJECT_DIR)/mbTunes/release/lib",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/FLAC",
 				);
 				MACH_O_TYPE = mh_execute;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jcm.jmc;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.melodieborel.mbTunes;
 				PRODUCT_NAME = mbTunes;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "jmc/jmc-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "mbTunes/mbTunes-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
@@ -1444,9 +1445,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8Z7WM5742Z;
-				INFOPLIST_FILE = jmcTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jcm.minimalTunesTests;
+				INFOPLIST_FILE = mbTunesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mbTunes.minimalTunesTests;
 				PRODUCT_NAME = mbTunes;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -1463,9 +1468,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8Z7WM5742Z;
-				INFOPLIST_FILE = jmcTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jcm.minimalTunesTests;
+				INFOPLIST_FILE = mbTunesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mbTunes.minimalTunesTests;
 				PRODUCT_NAME = mbTunes;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -1481,15 +1490,19 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8Z7WM5742Z;
-				INFOPLIST_FILE = jmcUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jcm.minimalTunesUITests;
+				INFOPLIST_FILE = mbTunesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mbTunes.minimalTunesUITests;
 				PRODUCT_NAME = mbTunes;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = jmc;
+				TEST_TARGET_NAME = mbTunes;
 			};
 			name = Debug;
 		};
@@ -1500,15 +1513,19 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8Z7WM5742Z;
-				INFOPLIST_FILE = jmcUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jcm.minimalTunesUITests;
+				INFOPLIST_FILE = mbTunesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mbTunes.minimalTunesUITests;
 				PRODUCT_NAME = mbTunes;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = jmc;
+				TEST_TARGET_NAME = mbTunes;
 			};
 			name = Release;
 		};
@@ -1554,13 +1571,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0D3E00851E3F1DC4007C1C83 /* jmc.xcdatamodeld */ = {
+		0D3E00851E3F1DC4007C1C83 /* mbTunes.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				0D3E00861E3F1DC4007C1C83 /* jmc.xcdatamodel */,
 			);
 			currentVersion = 0D3E00861E3F1DC4007C1C83 /* jmc.xcdatamodel */;
-			path = jmc.xcdatamodeld;
+			path = mbTunes.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
